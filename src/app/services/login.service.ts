@@ -26,7 +26,7 @@ export class LoginService {
       );
   }
   get = (URL: string, params = null): Observable<Object> => {
-    return this.http.get(this.api + URL, {
+    return this.http.get(this.local + this.loginURL, {
       headers: this.getHeaders(),
       params
     });
