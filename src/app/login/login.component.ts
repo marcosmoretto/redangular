@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
+import { runInThisContext } from 'vm';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,7 +18,12 @@ export class LoginComponent implements OnInit {
     // console.log(this.login);
     // console.log(this.login.name);
     // console.log(this.login.senha);
-    this.loginService.doLogin(this.login);
+    var data = {'client_id':this.login.name,
+                'client_secret': this.login.senha,
+                'grant_type': 'client_credentials',
+                'access': 'Site'
+              };
+    this.loginService.doLogin(data);
   }
 
   evento(event: any){

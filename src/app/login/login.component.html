@@ -3,7 +3,7 @@
         <input [(ngModel)]="login.name" placeholder="Login"/>
     </label>
     <label>Senha:
-        <input (keyup)="evento($event)" [(ngModel)]="login.senha" placeholder="Senha"/>
+        <input type="password" (keyup)="evento($event)" [(ngModel)]="login.senha" placeholder="Senha"/>
     </label>
     <button (click)="loginF()">Login</button>
 </div>
